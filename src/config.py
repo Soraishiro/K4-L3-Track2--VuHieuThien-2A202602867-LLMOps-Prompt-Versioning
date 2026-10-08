@@ -18,6 +18,9 @@ os.environ["LANGCHAIN_API_KEY"]    = os.getenv("LANGCHAIN_API_KEY", "")
 os.environ["LANGCHAIN_PROJECT"]    = os.getenv("LANGCHAIN_PROJECT", "day22-lab")
 os.environ["LANGCHAIN_ENDPOINT"]   = os.getenv("LANGCHAIN_ENDPOINT", "https://api.smith.langchain.com")
 
+# Workspace id (lấy từ URL workspace trên smith.langchain.com)
+os.environ["LANGSMITH_WORKSPACE_ID"] = os.getenv("LANGSMITH_WORKSPACE_ID", "")
+
 # ── Provider mặc định ─────────────────────────────────────────────────────
 # Đổi giá trị PROVIDER trong .env: openai | gemini | anthropic | ollama | openrouter
 PROVIDER = os.getenv("PROVIDER", "openai").lower()
@@ -48,8 +51,9 @@ OPENROUTER_MODEL    = os.getenv("OPENROUTER_MODEL", "openai/gpt-4o-mini")
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 
 # ── LangSmith ─────────────────────────────────────────────────────────────
-LANGSMITH_API_KEY = os.getenv("LANGCHAIN_API_KEY", "")
-LANGSMITH_PROJECT = os.getenv("LANGCHAIN_PROJECT", "day22-lab")
+LANGSMITH_API_KEY      = os.getenv("LANGCHAIN_API_KEY", "")
+LANGSMITH_PROJECT      = os.getenv("LANGCHAIN_PROJECT", "day22-lab")
+LANGSMITH_WORKSPACE_ID = os.getenv("LANGSMITH_WORKSPACE_ID", "")
 
 
 def validate() -> bool:
